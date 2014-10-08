@@ -1,0 +1,14 @@
+{
+  "name": "JSWebAppPolymer",  
+   "description": "Javascript webapp using Polymer and Google's Material Design",  
+   "homepage": "https://github.com/aissatech/Polymer/tree/master/JSWebAppPolymer",  
+   "keywords": [ "Polymer", "Material Design", "javascript webapp" ],  
+   "author": [	
+	{ "name": "aissatech", "email": "info@aissatechnologies.com", "homepage": "http://aissatechnologies.com" }
+   ],  
+   "private": false,
+   "dependencies": {    
+	"polymer": "Polymer/polymer#master",    
+	"paper-elements": "Polymer/paper-elements#master"  
+   }
+}
