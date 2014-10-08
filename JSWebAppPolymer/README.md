@@ -1,10 +1,10 @@
-Javascript webapp with Polymer
+##Javascript webapp with Polymer
 
 =======
 
 Javascript webapplication that uses Polymer and the new Google's Material Design pattern 
 
-## Tools:
+### Tools:
 
 Bower v1.3.12
 
