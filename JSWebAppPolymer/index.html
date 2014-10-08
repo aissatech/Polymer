@@ -1,0 +1,124 @@
+<!doctype html>
+
+<html>
+  <head>
+    <title>JSWebAppPolymer</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <script src="../platform/platform.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+
+    <link rel="import" href="../font-roboto/roboto.html">
+
+    <link rel="import" href="../core-toolbar/core-toolbar.html">
+    <link rel="import" href="../core-pages/core-pages.html">
+    <link rel="import" href="../core-list/core-list.html">
+    <link rel="import" href="../paper-menu-button/paper-menu-button.html">
+    <link rel="import" href="../paper-item/paper-item.html">
+    <link rel="import" href="../paper-fab/paper-fab.html">
+    <link rel="import" href="../paper-checkbox/paper-checkbox.html">
+    <link rel="import" href="../paper-tabs/paper-tabs.html">
+    <link rel="import" href="../paper-tabs/paper-tab.html">
+    <link rel="import" href="../paper-button/paper-button.html">
+    <link rel="import" href="../paper-toast/paper-toast.html">
+    <link rel="import" href="../core-icons/core-icons.html">
+    <link rel="import" href="../paper-dialog/paper-dialog-transition.html">
+    <link rel="import" href="../paper-dialog/paper-dialog.html">
+    <!--<link rel="import" href="../paper-icon-button/paper-icon-button.html">
+    <link rel="import" href="../core-menu/core-menu.html">
+    <link rel="stylesheet" href="core-menu.css" shim-shadowdom>-->
+    <link rel="stylesheet" href="styles.css">
+  </head>
+
+  <body unresolved>
+
+    <!-- TOOLBAR & MENU SECTION -->
+    <section>
+      <core-toolbar>
+            <paper-menu-button icon="menu">
+              <paper-item icon="add" label="Add" onclick="alert('Add action');"></paper-item>
+              <paper-item icon="remove" label="Remove" onclick="alert('Remove action');"></paper-item>
+              <paper-item icon="refresh" label="Refresh" onclick="alert('Refresh action');"></paper-item>
+              <paper-item icon="save" label="Save" onclick="alert('Save action');"></paper-item>
+              <paper-item icon="delete" label="Delete" onclick="alert('Delete action');"></paper-item>
+              <paper-item icon="close" label="Close" onclick="alert('Close action');"></paper-item>--
+              <paper-item icon="favorite" label="Favorite" onclick="alert('Favorite action');"></paper-item>
+              <paper-item icon="account-box" label="Account" onclick="alert('Account action');"></paper-item>
+              <paper-item icon="settings" label="Settings" onclick="alert('Settings action');"></paper-item>
+            </paper-menu-button>
+        <span flex>JSWebAppPolymer toolbar</span>
+        <!-- FAB -->
+        <paper-fab icon="add" onclick="alert('add');"></paper-fab>
+      </core-toolbar>
+    </section>
+
+    <!-- CHECKBOX SECTION -->
+    <section>
+      <p>A simple Polymer
+        <a href="http://www.polymer-project.org/docs/elements/paper-elements.html">
+        paper elements</a> example that demonstrates using <code>&lt;core-toolbar&gt;,
+        &lt;paper-button&gt;, &lt;paper-checkbox&gt;, &lt;paper-icon-button&gt;,
+        &lt;paper-fab&gt;, &lt;paper-tabs&gt;</code>, and <code>&lt;paper-toast&gt;</code>.
+      </p>
+      <paper-checkbox label="Check me!"></paper-checkbox>
+    </section>
+
+    <!-- TABS SECTION -->
+    <section>
+      <paper-tabs>
+        <paper-tab>Tab one</paper-tab>
+        <paper-tab>Tab two</paper-tab>
+        <paper-tab>Tab three</paper-tab>
+      </paper-tabs>
+      <core-pages flex>
+        <p style="color:red">Page 1 - A simple tab here</p>
+        <p style="color:blue">Pagina 2 - Una semplice tab</p>
+        <p style="color:green">Page 3 - Une simple tab</p>
+      </core-pages>
+
+      <script>
+        var pages = document.querySelector('core-pages');
+        var tabs = document.querySelector('paper-tabs');
+        tabs.addEventListener('core-select', function() {
+          pages.selected = tabs.selected;
+        });
+      </script>
+    </section>
+
+    <br>
+
+    <!-- DIALOG SECTION -->
+    <section>
+      <paper-button label="Open dialog" onclick="toggleDialog('paper-dialog-transition-center')"></paper-button>
+        <script>
+          function toggleDialog(transition) {
+            var dialog = document.querySelector('paper-dialog[transition=' + transition + ']');
+            dialog.toggle();
+          }
+        </script>
+      <paper-dialog heading="Dialog" transition="paper-dialog-transition-center">
+          <p>Lorem ipsum dolor sit amet, doming noster at quo, nostrud lucilius rationibus ea duo. Vim no mucius dolores.
+            No bonorum voluptatum vis, has iudicabit consectetuer ne. Nullam sensibus vim id, et quo graeci perpetua.</p>
+          <p>Id qui scripta laboramus dissentiet, verterem partiendo vim at. Stet dissentiet ut mei. Iriure facilis
+            eloquentiam pro eu, nec an esse inciderint. In meliore abhorreant sea. Eros nostro ocurreret at nec. Cu per regione persecuti.</p>
+          <p>Lorem ipsum dolor sit amet, doming noster at quo, nostrud lucilius rationibus ea duo. Vim no mucius dolores.
+            No bonorum voluptatum vis, has iudicabit consectetuer ne. Nullam sensibus vim id, et quo graeci perpetua.</p>
+          <paper-button label="More Info..." dismissive></paper-button>
+          <paper-button label="Decline" affirmative></paper-button>
+          <paper-button label="Accept" affirmative autofocus></paper-button>
+      </paper-dialog>
+    </section>
+
+    <!-- TOAST SECTION -->
+    <section>
+      <paper-button raisedButton right label="Show Toast"
+          onclick="document.querySelector('#toast1').show()">
+      </paper-button>
+      <paper-toast id="toast1" text="A sample toast here."></paper-toast>
+    </section>
+  </body>
+</html>
